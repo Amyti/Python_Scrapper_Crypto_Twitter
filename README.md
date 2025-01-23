@@ -16,7 +16,7 @@ Le projet se compose de deux étapes principales :
 
 Avant de commencer, assure-toi que les prérequis suivants sont installés :
 
-- Python 3.x
+- Python 3.12.8 ou superieur
 - `pip` pour installer les dépendances Python
 - Un **token Telegram** pour recevoir les notifications des tweets détectés.
 
@@ -86,6 +86,6 @@ Le script continuera à tourner en boucle, vérifiant les nouveaux tweets toutes
 
 ## Auteurs
 
-- **Amir Kabbouri** - [Ton GitHub](https://github.com/amir-kabbouri)
+- **Amir Kabbouri** - [My Git](https://github.com/Amyti)
 
 ---
