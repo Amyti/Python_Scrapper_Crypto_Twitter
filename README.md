@@ -27,21 +27,12 @@ Avant de commencer, assure-toi que les prérequis suivants sont installés :
 Clone ce repository sur ton ordinateur.
 
 ```bash
-git clone https://github.com/amir-kabbouri/twitter-crypto-monitor.git
-cd twitter-crypto-monitor
+git clone https://github.com/Amyti/Python_Scrapper_Crypto_Twitter.git
+cd Python_Scrapper_Crypto_Twitter
 ```
 
-### 2. Crée un environnement virtuel
 
-Il est recommandé de créer un environnement virtuel pour gérer les dépendances.
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Sur Linux/macOS
-venv\Scripts\activate     # Sur Windows
-```
-
-### 3. Installe les dépendances
+### 2. Installe les dépendances
 
 Installe toutes les dépendances nécessaires avec `pip`.
 
@@ -49,7 +40,7 @@ Installe toutes les dépendances nécessaires avec `pip`.
 pip install -r requirements.txt
 ```
 
-### 4. Configure les variables d'environnement
+### 3. Configure les variables d'environnement
 
 Crée un fichier `.env` à la racine du projet et ajoute tes informations Telegram (Token et Chat ID) comme suit :
 
@@ -91,60 +82,10 @@ python main.py
 - Il recherche des mots-clés associés à la crypto-monnaie dans chaque tweet.
 - Si un tweet correspondant est trouvé, une alerte est envoyée à ton compte Telegram avec le contenu du tweet et des informations supplémentaires.
 
-Le script continuera à tourner en boucle, vérifiant les nouveaux tweets toutes les 30 secondes.
-
-### 3. **Garder le bot en ligne (facultatif)**
-
-Si tu veux garder ton bot en ligne en permanence, même si tu l'exécutes sur un serveur, tu peux utiliser un serveur Flask pour faire tourner l'application. Le script `main.py` inclut la fonction `keep_alive()` qui fait tourner un serveur Flask en arrière-plan.
-
-Cela permet de maintenir le bot actif sur des plateformes comme Replit ou des serveurs cloud qui nécessitent une activité web pour ne pas se mettre en veille.
-
-Tu peux démarrer le serveur avec cette commande :
-
-```bash
-python main.py
-```
-
-Le serveur sera disponible sur `http://127.0.0.1:8080` ou `http://<ton_ip>:8080`.
-
-### 4. **Interagir avec l'application web (facultatif)**
-
-Une fois que le serveur Flask est lancé, tu peux accéder à l'interface web pour vérifier que ton bot est bien en ligne. Ouvre simplement ton navigateur et va à l'URL suivante :
-
-```
-http://127.0.0.1:8080
-```
-
-Cela affichera un message confirmant que le bot est en ligne.
-
-## Structure du projet
-
-Voici un aperçu de la structure du projet :
-
-```
-twitter-crypto-monitor/
-│
-├── json/
-│   ├── cookies.json          # Fichier contenant les cookies de session Twitter
-│   └── tweets_history.json   # Historique des tweets surveillés
-│
-├── main.py                   # Script principal de surveillance des tweets
-├── login.py                  # Script de connexion pour sauvegarder les cookies
-├── requirements.txt          # Liste des dépendances du projet
-├── .env                      # Variables d'environnement (Telegram Token et Chat ID)
-└── README.md                 # Ce fichier
-```
-
-## Dépannage
-
-- **Problème de cookies** : Si tu rencontres des erreurs liées aux cookies, assure-toi que le fichier `cookies.json` est correctement généré. Tu peux essayer de refaire la connexion en exécutant `login.py` à nouveau.
-- **Erreur Telegram** : Si les messages Telegram ne sont pas envoyés, vérifie que ton `TELEGRAM_TOKEN` et `TELEGRAM_CHAT_ID` sont correctement configurés dans le fichier `.env`.
+Le script continuera à tourner en boucle, vérifiant les nouveaux tweets toutes les 10 à 30 secondes.
 
 ## Auteurs
 
 - **Amir Kabbouri** - [Ton GitHub](https://github.com/amir-kabbouri)
 
 ---
-
-Si tu as des questions ou des améliorations à suggérer, n'hésite pas à ouvrir une *issue* ou à envoyer une *pull request*.
-
